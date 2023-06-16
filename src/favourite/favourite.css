@@ -1,0 +1,148 @@
+.logo span{
+    color: aqua;
+    font-weight: 800;
+    font-size: larger;
+    text-decoration: line-through;
+}
+  
+.logo{
+    font-weight: 700;
+    color: #9c9999;
+    text-shadow: 1px 1px rgb(150, 244, 109);
+}
+
+.muted img{
+    height: 37px;
+    padding: 11px 12px 11px ;
+    background-color: #d8d0d0;
+    border-radius: 27px;
+}
+
+.banner-header{
+    font-weight: 650;
+    margin: 20px 0 30px;
+    text-shadow: 2px 1px #034178;
+}
+
+
+footer{
+    background-color: #262424;
+    padding: 30px 0 30px;
+}
+  
+#logo span{
+    color: aqua;
+    font-weight: 800;
+    font-size: larger;
+    text-decoration: line-through;
+}
+  
+#logo{
+    font-size: large;
+    font-weight: 700;
+    color: #9c9999;
+    text-shadow: 1px 1px rgb(150, 244, 109);
+}
+  
+.contact{
+    font-weight: bold;
+    font-size: small;
+    color: #9c9999;
+    padding: 0 0 10px;
+}
+
+
+.myBanner{
+   background-color: lavender;
+}
+
+.d-block{
+    height: 300px;
+    padding: 16px 0 10px;
+}
+
+.d-block:hover{
+   transform: scaleY(1.1); 
+}
+
+.mypostersHeader{
+    font-weight: 700;
+    margin: 20px 0 30px;
+    text-shadow: 2px 1px #6c757D;
+}
+  
+.myFavouritePosters:hover{
+transform: scaleY(1.1);
+transform: scaleX(1.1);
+opacity: 0.6;
+}
+  
+.myFavouritePostersBtn{
+    position: relative;
+    bottom: 30px;
+    padding: 7px 30px 7px;
+    font-weight: 500;
+}
+
+.favouriteError{
+    font-weight: 720;
+    font-family: monospace ;
+}
+
+#social-media{
+    font-size: 14px;
+    font-weight: 500;
+    color: #6c757D;
+}
+  
+#social-media img{
+    height: 20px;
+}
+  
+#email{
+    color: #6c757D;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 0 8px;
+}
+  
+#email img{
+    height: 20px;
+}
+  
+#call{
+    font-size: 14px;
+    font-weight: 500;
+    color: #6c757D;
+}
+  
+#call img{
+    height: 30px;
+    padding: 4px 6px 4px ;
+    border-radius: 22px;
+    border: #9c9999 solid 1px;
+}
+  
+ul h6{
+    font-weight: bold;
+    font-size: small;
+    color: #9c9999;
+}
+  
+ul li{
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+    color: #6c757D;
+}
+  
+ul li:hover{
+    color: #157347;
+    font-size: 15px;
+}
+  
+footer p{
+    color: #9c9999;
+    font-size: 12px;
+}

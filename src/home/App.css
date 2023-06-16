@@ -1,0 +1,270 @@
+.logo span{
+  color: aqua;
+  font-weight: 800;
+  font-size: larger;
+  text-decoration: line-through;
+}
+
+
+.logo{
+  font-weight: 700;
+  color: #9c9999;
+  text-shadow: 1px 1px rgb(150, 244, 109);
+}
+
+.muted img{
+    height: 37px;
+    padding: 11px 12px 11px ;
+    background-color: #d8d0d0;
+    border-radius: 27px;
+}
+
+section#mybanner {
+  height: 100vh;
+  background-image: url(../image/movie-url.jpg);
+}
+
+h3.myBannerHeader{
+  font-weight: 700;
+  text-shadow: 2px 1px red;
+  margin: 170px 0 0;
+}
+
+.mypostersHeader{
+  font-weight: 700;
+  margin: 0 0 30px;
+  text-shadow: 2px 1px rgb(0, 106, 255);
+}
+
+
+
+.myposters:hover{
+  transform: scaleY(1.1);
+  transform: scaleX(1.1);
+  opacity: 0.6;
+}
+
+.myPostersBtn{
+  position: relative;
+  bottom: 30px;
+  padding: 7px 30px 7px;
+  font-weight: 500;
+}
+
+h4{
+  color: rgba(236, 239, 7, 0.686);
+  font-family: cursive;
+  margin-top: 50px;
+  font-style: italic;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+p{
+  color: #41ff0daf;
+  font-family: cursive;
+  font-weight: 800;
+  text-align: center;
+}
+ 
+section#input-section {
+  background-color: rgb(64, 64, 64);
+}
+
+section#input-section .row {
+  margin-top: 48px;
+  background-color: rgb(64, 64, 64);
+}
+
+section#input-section .row .input {
+  background-color: rgb(64, 64, 64);
+}
+
+section#input-section .row label {
+  background-color: rgb(64, 64, 64);
+  color: rgba(236, 239, 7, 0.686);
+  font-style:oblique;
+  font-weight: 700;
+}
+
+section#input-section .row input {
+  background-color: rgb(64, 64, 64);
+  font-style:oblique;
+  font-weight: 700;
+}
+
+section#input-section label {
+  background-color: rgb(64, 64, 64);
+  color: #41ff0daf;
+  font-style:oblique;
+  font-weight: 700;
+}
+
+section#input-section .select {
+  background-color: rgb(64, 64, 64);
+  font-style:oblique;
+  font-weight: 700;
+  color: #6c757D;
+  width: max-content;
+}
+
+section#input-section .text-center  {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  background-color:  rgb(64, 64, 64);
+}
+
+section#input-section .text-center  div {
+ background-color:  rgb(64, 64, 64);
+}
+
+section#input-section #btn{
+  font-style:oblique;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+#input-section{
+  margin: 0px 0 48px;
+  padding: 20px 80px 20px;
+}
+
+.divSpinner{
+  display: flex;
+  justify-content: center;
+}
+
+.error{
+  font-weight: 700;
+  text-shadow: 2px 1px #EDEDED;
+
+}
+
+#myResult .card-Img{
+    height: 320px;
+}
+
+#myResult .card-Header img{
+  float: right;
+  padding: 6px 6px 6px;
+  height: 27px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  background-color: #EDEDED;
+  opacity: 0.1;
+  filter: alpha(opacity=50); 
+}
+
+#myResult .card-Header img:hover{
+  opacity: 1.3;
+  filter: alpha(opacity=50); 
+  background-color: #b5afaf;
+}
+#play{
+  height: 70px;
+  position: relative;
+  top: 80px;
+}
+
+#play:hover{
+  height: 75px;
+}
+
+#myResult .Title{
+  font-size: small;
+  font-weight: 700;
+
+}
+
+footer{
+  background-color: #262424;
+  padding: 30px 0 30px;
+}
+
+#logo span{
+  color: aqua;
+  font-weight: 800;
+  font-size: larger;
+  text-decoration: line-through;
+}
+
+#logo{
+  font-size: large;
+  font-weight: 700;
+  color: #9c9999;
+  text-shadow: 1px 1px rgb(150, 244, 109);
+}
+
+.contact{
+  font-weight: bold;
+  font-size: small;
+  color: #9c9999;
+  padding: 0 0 10px;
+}
+
+#social-media{
+  font-size: 13px;
+  font-weight: 500;
+  color: #6c757D;
+}
+
+#social-media img{
+  height: 20px;
+}
+
+#email{
+  color: #6c757D;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 0 8px;
+}
+
+#email img{
+  height: 20px;
+}
+
+#call{
+  font-size: 12px;
+  font-weight: 500;
+  color: #6c757D;
+}
+
+#call img{
+  height: 30px;
+  padding: 4px 6px 4px ;
+  border-radius: 22px;
+  border: #9c9999 solid 1px;
+}
+
+ul h6{
+  font-weight: bold;
+  font-size: small;
+  color: #9c9999;
+}
+
+ul li{
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  color: #6c757D;
+}
+
+ul li:hover{
+  color: #157347;
+  font-size: 15px;
+}
+
+footer p{
+  color: #9c9999;
+  font-size: 12px;
+  margin: 20px 0 10px;
+}
+
+.noOfMovies-btn{
+  position: fixed;
+  bottom: 0px;
+  right: 0px; 
+  border-radius: 35px;
+}
