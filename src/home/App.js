@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState} from "react";
 import Navbars from "./Navbar";
 import Banner from "./banner";
 import Footer from "./footer";
@@ -11,46 +11,85 @@ import Form from 'react-bootstrap/Form';
 import favourite from '../image/hearts.png';
 import Button from 'react-bootstrap/Button';
 import plays from '../image/playes.png';
+// import pause from '../image/pause.png'
 import './App.css';
 import { Card,Spinner} from "react-bootstrap";
 
 
-export default function App (props) {
+
+export default function App () {
   let [isLoading, setIsLoading] = useState(false);
+  let[favouriteMovie,setFavouriteMovie]=useState([]);
   const[type,setType]=useState("");
   const[title,setTitle]=useState("");
   const[year,setYear]=useState("");
   let [error, setError]=useState(false);
+  let [searchError, setSearchError]=useState(false);
   let[moviess,setMoviess]=useState([]);
-  let [noOfMovies, SetNoOfMovies]=('0')
+  // let [play, SetPlay]=useState(plays);
+  let [noOfMovies, SetNoOfMovies]=useState(0)
   
   const handleClick=()=>{
     setIsLoading(true);
     fetch(`http://www.omdbapi.com/?apikey=20ecbe46&s=${title}&y=${year}&type=${type}`)
     .then((response) => response.json())
     .then(response => {
-      console.log(response.Search)
-       setMoviess(response.Search);
-       SetNoOfMovies(response.totalResults);       
+       setMoviess(response.Search);   
+       setError(false)   
        setIsLoading(false) 
     })
-    .catch(error=>{setError(false)|| setIsLoading(false)})
+
+    .catch(error=>{setError(true)  || setError(true) || setSearchError(true)})
     .finally()
   }
 
+  useEffect(()=>{
+    SetNoOfMovies(moviess.length)
+  },[moviess.length])
+   
+    const handleAddToFavourite = (favouriteMovies) => {
+      setFavouriteMovie([...favouriteMovie, favouriteMovies]);
+    }
+
+    const handleRemove = (removeFavourite) => {
+      const filteredItems = favouriteMovie.filter(item => item !== removeFavourite)
+      setFavouriteMovie(filteredItems);
+      console.log(filteredItems)
+    }
+    
+    console.log(favouriteMovie)
+
 return(
   <>
-    <Navbars/>
+    <Navbars favouriteMovie={favouriteMovie}/>
     <Banner/>
-    <Posters/>
 
+    {/* my favourite */}
+    <section className="mb-4">
+      <Container>
+        <h3 className="myFavouriteHeader text-center mt-3">Favourite Movies</h3>
+        <Row lg={5} md={4} sm={2} xs={1}>
+            {favouriteMovie ? 
+            (favouriteMovie.map((myfavour, index, favourites)=>{
+                return( 
+                    <Card key={index} className=" border myfavourite m-1">
+                      <p id="remove" onClick={() => handleRemove (myfavour)}>&times;</p>
+                      <Card.Img src={myfavour.Poster} variant="top" alt='favourite-img' id="favourite-itemsImg" className="myFavouritePosters w-200"/>
+                      <h6 className="mt-1 title text-center">{myfavour.Title}</h6>
+                      <h6 className="subtitlefavour text-center">{myfavour.Year}</h6> 
+                    </Card>                                               
+                )
+            })) : (<p className="favouriteError text-center text-danger container">Sorry,your favourite is empty,pls add your favourite Posters. </p>)}
+          </Row> 
+      </Container>
+    </section>
     {/* search for movies in the key */}
     <div id="main">  
       <Container>
         {/* this is the form for search */}
           <section className="border text-center" id="input-section">
               <Row  id="row">
-                <p >search for your movies&films</p>
+                <p className="myheaderp">search for your movies&films</p>
                 <Col lg={6}  sm={12} className='input'><Form.Label>Title:</Form.Label><Form.Control  placeholder="Title" value={title} onChange={(e)=>setTitle(e.target.value)} required/></Col>
                 <Col lg={6} sm={12} className='input'><Form.Label>Year:</Form.Label><Form.Control  placeholder="Year" value={year} type="number" onChange={(e)=>setYear(e.target.value)} required/></Col>   
               </Row>   
@@ -75,8 +114,9 @@ return(
           </div>) : ('')
           }
         {error ? (<div className="error text-center text-danger p-2">Pls check your internet connection!</div>) : ('')}
-    </div>
 
+        {searchError ? (<div className="error text-center text-danger p-2">Search Not Found!</div>) : ('')}
+    </div>
     {/* this is the result of the api */}
     <Container className="border">
         <Row  xs={1} sm={3} md={4} lg={4}>
@@ -86,19 +126,18 @@ return(
               <Card key={index}  id="myResult">
                 <Card.Img src={movie.Poster} alt={movie.Title} className="card-Img"/>
                 <Card.ImgOverlay>
-                  <Card.Header className="card-Header"><img src={favourite} alt="favourites"/></Card.Header>
+                  <Card.Header className="d-flex card-Header border-0"><img src={favourite} alt="favourites" onClick={() => handleAddToFavourite (movie)} className="justify-content-end"/></Card.Header>
                   <div className="text-center">
                     <img src={plays} alt="play" id="play"/>
                   </div>
                 </Card.ImgOverlay>
-                <Card.Title className="Title text-center">{movie.Title}</Card.Title>            
-                <Card.Footer className="text-center">{movie.Year}</Card.Footer>
               </Card>
             )
           })}
         </Row>        
      </Container>
-    <Button variant="outline-success" className="btn noOfMovies-btn" title="Number" >{noOfMovies}</Button>
+    <Button variant="outline-success" className="btn noOfMovies-btn"  title="Number of result" >{noOfMovies}</Button>
+    <Posters/>
     <Footer/>
   </>
 )

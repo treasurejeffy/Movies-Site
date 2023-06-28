@@ -8,14 +8,8 @@ import poster3 from '../image/B7.png';
 import poster4 from '../image/B8.png';
 import poster5 from '../image/B1.png';
 import poster6 from '../image/B10.png';
-import poster7 from '../image/B11.png';
-import poster8 from '../image/B12.png';
-import poster9 from '../image/B13.png';
-import poster10 from '../image/B14.png';
-import poster11 from '../image/B22.png';
-import poster12 from '../image/B26.png';
 
-export default function Posters(props) {
+export default function Posters() {
     const [poster,setPoster] = useState([
         {
             id:1,
@@ -40,35 +34,9 @@ export default function Posters(props) {
         {
             id:6,
             img:poster6
-        },
-        {
-            id:7,
-            img:poster7
-        },
-        {
-            id:8,
-            img:poster8
-        },
-        {
-            id:9,
-            img:poster9
-        },
-        {
-            id:10,
-            img:poster10
-        },
-        {
-            id:11,
-            img:poster11
-        },
-        {
-            id:12,
-            img:poster12
         }
     ]);
-    let [favouritestorage,setFavouriteStorage]=useState([])
-    const favourite=props.favourite;
-    const setFavourite=props.setFavourite;
+    let [favouritestorage,setFavouriteStorage]=useState([]);
 
     const handleFavourite = (addToFavourite) =>{
         favouritestorage.push(addToFavourite)

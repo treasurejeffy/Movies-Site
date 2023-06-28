@@ -49,7 +49,7 @@ export default function Footer() {
                             </ul>
                         </Col>
                     </Row>
-                    <p className="text-muted-center pt-2">copyright.2023</p>
+                    <p className="text-muted text-center pt-2">copyright.2023</p>
                 </Container>
             </footer>
         </>

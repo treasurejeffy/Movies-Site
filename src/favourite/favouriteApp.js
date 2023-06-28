@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Col,Row,Container,Button} from 'react-bootstrap';
 import './favourite.css';
 
-export default function FavouriteApp(props) {
+export default function FavouriteApp() {
     const [favourites, setFavourites]=useState(
         JSON.parse(sessionStorage.getItem('myposters')))
 
