@@ -39,7 +39,7 @@ export default function App () {
        setIsLoading(false) 
     })
 
-    .catch(error=>{setError(true)  || setError(true) || setSearchError(true)})
+    .catch(error=>{setError(true)  || setError(true) })
     .finally()
   }
 
@@ -115,7 +115,7 @@ return(
           }
         {error ? (<div className="error text-center text-danger p-2">Pls check your internet connection!</div>) : ('')}
 
-        {searchError ? (<div className="error text-center text-danger p-2">Search Not Found!</div>) : ('')}
+        {searchError=<div className="error text-center text-danger p-2">Search Not Found!</div>}
     </div>
     {/* this is the result of the api */}
     <Container className="border">
