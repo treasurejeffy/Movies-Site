@@ -23,7 +23,6 @@ export default function App () {
   const[type,setType]=useState("");
   const[title,setTitle]=useState("");
   const[year,setYear]=useState("");
-  let [error, setError]=useState(false);
   let [searchError, setSearchError]=useState(false);
   let[moviess,setMoviess]=useState([]);
   // let [play, SetPlay]=useState(plays);
@@ -34,12 +33,11 @@ export default function App () {
     fetch(`http://www.omdbapi.com/?apikey=20ecbe46&s=${title}&y=${year}&type=${type}`)
     .then((response) => response.json())
     .then(response => {
-       setMoviess(response.Search);   
-       setError(false)   
+       setMoviess(response.Search);    
        setIsLoading(false) 
     })
 
-    .catch(error=>{setError(true)  || setIsLoading(true) })
+    .catch(error=>{setIsLoading(true) })
     .finally()
   }
 
@@ -113,7 +111,6 @@ return(
             <Spinner animation="border" variant="success" className="spinner"/>
           </div>) : ('')
           }
-        {error ? (<div className="error text-center text-danger p-2">Pls check your internet connection!</div>) : ('')}
     </div>
     {/* this is the result of the api */}
     <Container className="border">
