@@ -30,7 +30,7 @@ export default function App () {
   
   const handleClick=()=>{
     setIsLoading(true);
-    fetch(`http://www.omdbapi.com/?apikey=20ecbe46&s=${title}&y=${year}&type=${type}`)
+    fetch(`https://www.omdbapi.com/?apikey=20ecbe46&s=${title}&y=${year}&type=${type}`)
     .then((response) => response.json())
     .then(response => {
        setMoviess(response.Search);    
