@@ -5,6 +5,7 @@ import home from '../image/home.png';
 import bell from '../image/bell.png';
 import heart from '../image/hearts.png';
 import './App.css'
+import { HeartFill } from "react-bootstrap-icons";
 
 export default function Navbars(props) {
     const count =props.favouriteMovie.length
@@ -17,7 +18,7 @@ export default function Navbars(props) {
                     <Nav className="navbar-nav navbar-right">
                         <Nav.Link className="muted" title="you"><img src={home} alt="you" /></Nav.Link>
                         <Nav.Link className="muted" title="Notification"><img src={bell} /></Nav.Link>
-                        <Nav.Link className="muted" href="./favourite" title="Favourite"><img src={heart}/><Button className="favouriteCount" variant='outline-success'>{count}</Button></Nav.Link>
+                        <Nav.Link className="muted" href="./favourite" title="Favourite"><HeartFill className="text-warning heart"/><Button className="favouriteCount m-1" variant='outline-success'>{count}</Button></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
            </Container>

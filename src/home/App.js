@@ -107,11 +107,16 @@ return(
           </section>
       </Container>
       {/* this is for the spinner and the network error */}
-        {isLoading ? 
-          (<div className="divSpinner mb-3"> 
-            <Spinner animation="border" variant="success" className="spinner"/>
-          </div>) : ('')
-          }
+      {isLoading ? 
+    (
+        <div className="divSpinner mb-3"> 
+            <Spinner animation="border" variant="success" className="spinner"/>loading...
+        </div>
+    ) 
+    : 
+    (<p className="text-center"></p>)
+}
+
     </div>
     {/* this is the result of the api */}
     <Container className="p-3">

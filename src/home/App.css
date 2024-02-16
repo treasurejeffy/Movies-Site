@@ -1,5 +1,5 @@
 .logo span{
-  color: aqua;
+  color: gold;
   font-weight: 800;
   font-size: larger;
   text-decoration: line-through;
@@ -9,7 +9,7 @@
 .logo{
   font-weight: 700;
   color: #9c9999;
-  text-shadow: 1px 1px rgb(150, 244, 109);
+  text-shadow: 1px 1px gold;
 }
 
 .muted img{
@@ -17,6 +17,11 @@
     padding: 11px 12px 11px ;
     background-color: #d8d0d0;
     border-radius: 27px;
+}
+
+.muted .heart{
+  font-size: x-large;
+  border-radius: 27px;
 }
 
 .favouriteCount{
@@ -175,12 +180,18 @@ section#input-section #btn{
   position: relative;
   top: 50px;
   right: 10px;
+  cursor: pointer;
+}
+
+#myResult .card_Header:hover{
+  color: #157347;
 }
 
 #myResult .card_download{
   position: relative;
   bottom: 50px; 
   right: 10px;
+  cursor: pointer;
 }
 
 footer{
@@ -189,7 +200,7 @@ footer{
 }
 
 #logo span{
-  color: aqua;
+  color: gold;
   font-weight: 800;
   font-size: larger;
   text-decoration: line-through;
@@ -199,7 +210,7 @@ footer{
   font-size: large;
   font-weight: 700;
   color: #9c9999;
-  text-shadow: 1px 1px rgb(150, 244, 109);
+  text-shadow:gold;
 }
 
 .contact{
