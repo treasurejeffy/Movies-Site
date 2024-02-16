@@ -12,14 +12,14 @@ export default function Navbars(props) {
         <Navbar expand="lg"  sticky="top" id="navbar" className="bg-dark"> 
             <Container >                                 
                 <Navbar.Brand href="#home" className="logo"> <span>M</span>Movies</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" className="border-0"/>
-                {/* <Navbar.Collapse id="basic-navbar-nav" className="m-auto"> */}
+                <Navbar.Toggle aria-controls="basic-navbar-nav" className="border-0 shadow-none bg-light"/>
+                <Navbar.Collapse id="basic-navbar-nav"  className="d-lg-flex justify-content-end ">
                     <Nav className="navbar-nav navbar-right">
                         <Nav.Link className="muted" title="you"><img src={home} alt="you" /></Nav.Link>
                         <Nav.Link className="muted" title="Notification"><img src={bell} /></Nav.Link>
                         <Nav.Link className="muted" href="./favourite" title="Favourite"><img src={heart}/><Button className="favouriteCount" variant='outline-success'>{count}</Button></Nav.Link>
                     </Nav>
-                {/* </Navbar.Collapse> */}
+                </Navbar.Collapse>
            </Container>
         </Navbar>                               
     )

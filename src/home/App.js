@@ -14,6 +14,7 @@ import plays from '../image/playes.png';
 // import pause from '../image/pause.png'
 import './App.css';
 import { Card,Spinner} from "react-bootstrap";
+import { Download, Heart, HeartFill } from "react-bootstrap-icons";
 
 
 
@@ -72,7 +73,7 @@ return(
                 return( 
                     <Card key={index} className=" border myfavourite m-1">
                       <p id="remove" onClick={() => handleRemove (myfavour)}>&times;</p>
-                      <Card.Img src={myfavour.Poster} variant="top" alt='favourite-img' id="favourite-itemsImg" className="myFavouritePosters w-200"/>
+                      <Card.Img src={myfavour.Poster} variant="top" alt='favourite-img' id="favourite-itemsImg" className="myFavouritePosters img-fluid"/>
                       <h6 className="mt-1 title text-center">{myfavour.Title}</h6>
                       <h6 className="subtitlefavour text-center">{myfavour.Year}</h6> 
                     </Card>                                               
@@ -102,7 +103,7 @@ return(
                       </Form.Label>
                       </div> 
                   </div> 
-                    <Button onClick={handleClick} id="btn" className="btn btn-success pd-3">search</Button>
+                    <Button onClick={handleClick} id="btn" className="btn btn-success px-5 fs-5 pb-2 mb-4">search</Button>
           </section>
       </Container>
       {/* this is for the spinner and the network error */}
@@ -113,20 +114,22 @@ return(
           }
     </div>
     {/* this is the result of the api */}
-    <Container className="border">
+    <Container className="p-3">
         <Row  xs={1} sm={3} md={4} lg={4}>
           {moviess.map((movie, index)=>{
             console.log(moviess)
             return(
-              <Card key={index}  id="myResult">
-                <Card.Img src={movie.Poster} alt={movie.Title} className="card-Img"/>
-                <Card.ImgOverlay>
-                  <Card.Header className="d-flex card-Header border-0"><img src={favourite} alt="favourites" onClick={() => handleAddToFavourite (movie)} className="justify-content-end"/></Card.Header>
-                  <div className="text-center">
-                    <img src={plays} alt="play" id="play"/>
-                  </div>
-                </Card.ImgOverlay>
-              </Card>
+              <div key={index} className="border-0  card  "  id="myResult">
+                <div className="d-flex justify-content-end card_Header border-0">
+                  <HeartFill onClick={() => handleAddToFavourite (movie)} className="fs-4 text-warning heart" />
+                </div>
+                <img src={movie.Poster} alt={movie.Title} className="card-Img img-fluid w-100 rounded" />               
+                <div className="d-flex justify-content-end card_download">                    
+                    <a href={movie.Poster} download='myPoster'>
+                      <Download className=" fs-3 bg-success text-light p-1 rounded-5"/>
+                    </a> 
+                </div>
+              </div>
             )
           })}
         </Row>        

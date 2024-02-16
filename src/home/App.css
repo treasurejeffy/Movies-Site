@@ -171,34 +171,17 @@ section#input-section #btn{
 
 }
 
-#myResult .card-Img{
-    height: 330px;
-}
-
-#myResult .card-Header img{
-  padding: 6px 6px 6px;
-  box-shadow: 1px 1px grey;
-  height: 30px;
-  border-radius: 20px;
-  background-color: #EDEDED;
-}
-
-#myResult .card-Header img:hover{
-  height: 32px;
-  box-shadow:1.5px 1.5px 1.5px rgb(108, 225, 108);
-  background-color: gold;
-}
-
-#play{
-  height: 50px;
+#myResult .card_Header{
   position: relative;
-  top: 74px;
+  top: 50px;
+  right: 10px;
 }
 
-#play:hover{
-  height: 55px;
+#myResult .card_download{
+  position: relative;
+  bottom: 50px; 
+  right: 10px;
 }
-
 
 footer{
   background-color: #262424;
