@@ -128,7 +128,7 @@ return(
                 <div className="d-flex justify-content-end card_Header border-0">
                   <HeartFill onClick={() => handleAddToFavourite (movie)} className="fs-4 text-warning heart" />
                 </div>
-                <img src={movie.Poster} alt={movie.Title} className="card-Img img-fluid w-100 rounded" />               
+                <img src={movie.Poster} alt={movie.Title} className="card-Img  rounded" />               
                 <div className="d-flex justify-content-end card_download">                    
                     <a href={movie.Poster} download='myPoster'>
                       <Download className=" fs-3 bg-success text-light p-1 rounded-5"/>
