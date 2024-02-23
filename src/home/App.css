@@ -12,6 +12,10 @@
   text-shadow: 1px 1px gold;
 }
 
+.card-Img{
+  height: 300px;
+}
+
 .muted img{
     height: 37px;
     padding: 11px 12px 11px ;
